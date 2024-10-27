@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from book.views import index
+from book.views import (
+    index,
+    HelloWorldView
+    )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
+    path('function/', index),
+    path('class/', HelloWorldView.as_view())
 ]
