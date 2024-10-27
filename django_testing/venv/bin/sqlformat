@@ -1,4 +1,4 @@
-#!/home/alexo/Desktop/dj_0/venv/bin/python3
+#!/home/alexo/Desktop/python_practice/django_testing/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
