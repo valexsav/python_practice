@@ -1,0 +1,7 @@
+{% block content %}
+  <h1>Book</h1>
+  <ul>
+      <li>{{ book.title }} - {{ book.id }}</li>
+      <a href="{% url 'index' %}">Main</a>
+  </ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% block content %}
+  <h1>Books</h1>
+  <ul>
+    {% for book in books %}
+      <li>{{ book.title }} - {{ book.id }}</li>
+      <a href="{% url 'book_details' book.id %}">Details</a>
+    {% endfor %}
+  </ul>
+{% endblock %}

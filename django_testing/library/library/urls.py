@@ -19,11 +19,13 @@ from django.urls import path
 
 from book.views import (
     index,
-    HelloWorldView
+    HelloWorldView,
+    get_book_details,
     )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('function/', index),
-    path('class/', HelloWorldView.as_view())
+    path('function/', index, name='index'),
+    path('book/<int:book_id>', get_book_details, name='book_details'),
+    path('class/', HelloWorldView.as_view()),
 ]
