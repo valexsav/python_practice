@@ -10,6 +10,8 @@ from book.models import Book
 
 from django.core.paginator import Paginator
 
+from .forms import BookForm
+
 
 def pagination_test(request):
     objects_list = Book.objects.all()
@@ -29,7 +31,10 @@ def index(request):
     return render(
         request,
         'book/index.html',
-        context={'books': books},
+        context={
+            'books': books,
+            'form': BookForm(),
+        },
     )
 
 def get_book_details(request, book_id):

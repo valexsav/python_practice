@@ -9,7 +9,6 @@ class Book(models.Model):
         'author.Author',
         on_delete=models.PROTECT,
         related_name='books',
-        help_text='Author of the book',
         )
     
     def __str__(self):
