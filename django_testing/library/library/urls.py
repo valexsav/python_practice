@@ -21,7 +21,8 @@ from book.views import (
     index,
     HelloWorldView,
     get_book_details,
-    redirect_to_main_page
+    redirect_to_main_page,
+    pagination_test,
     )
 
 urlpatterns = [
@@ -30,4 +31,5 @@ urlpatterns = [
     path('book/<int:book_id>', get_book_details, name='book_details'),
     path('class/', HelloWorldView.as_view()),
     path('', redirect_to_main_page),
+    path('pagination/', pagination_test, name='pagination_test'),
 ]

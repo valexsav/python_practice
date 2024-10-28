@@ -8,6 +8,21 @@ from django.views import View
 
 from book.models import Book
 
+from django.core.paginator import Paginator
+
+
+def pagination_test(request):
+    objects_list = Book.objects.all()
+    paginator = Paginator(objects_list, 1)
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(
+        request,
+        'book/pagination_test.html',
+        context={'page_obj': page_obj},
+    )
+
 
 def index(request):
     books = Book.objects.all()
