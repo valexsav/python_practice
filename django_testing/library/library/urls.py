@@ -21,6 +21,7 @@ from book.views import (
     index,
     HelloWorldView,
     get_book_details,
+    redirect_to_main_page
     )
 
 urlpatterns = [
@@ -28,4 +29,5 @@ urlpatterns = [
     path('function/', index, name='index'),
     path('book/<int:book_id>', get_book_details, name='book_details'),
     path('class/', HelloWorldView.as_view()),
+    path('', redirect_to_main_page),
 ]

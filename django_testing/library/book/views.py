@@ -1,6 +1,7 @@
 from django.shortcuts import (
     render,
     redirect,
+    get_object_or_404,
 )
 from django.http import HttpResponse
 from django.views import View
@@ -14,9 +15,12 @@ def index(request):
 
 def get_book_details(request, book_id):
     
-    book = Book.objects.get(id=book_id)
+    book = get_object_or_404(Book, id=book_id) # Book.objects.get(id=book_id)
     return render(request, 'book/book_info.html', {'book': book})
 
+
+def redirect_to_main_page(request):
+    return redirect('index')
 
 class HelloWorldView(View):
     def get(self, request):
