@@ -11,12 +11,20 @@ from book.models import Book
 
 def index(request):
     books = Book.objects.all()
-    return render(request, 'book/index.html', {'books': books})
+    return render(
+        request,
+        'book/index.html',
+        context={'books': books},
+    )
 
 def get_book_details(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
     
-    book = get_object_or_404(Book, id=book_id) # Book.objects.get(id=book_id)
-    return render(request, 'book/book_info.html', {'book': book})
+    return render(
+        request,
+        'book/book_info.html',
+        context={'book': book},
+    )
 
 
 def redirect_to_main_page(request):

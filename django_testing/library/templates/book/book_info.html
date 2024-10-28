@@ -1,7 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Book - {{book.title}} {% endblock %}
+
 {% block content %}
-  <h1>Book</h1>
+  <h1>Book {{ book.title }}</h1>
   <ul>
       <li>{{ book.title }} - {{ book.id }}</li>
-      <a href="{% url 'index' %}">Main</a>
+      <a href="{% url 'index' %}">go to main</a>
   </ul>
 {% endblock %}
